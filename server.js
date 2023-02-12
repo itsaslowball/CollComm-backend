@@ -19,6 +19,7 @@ app.use(express.json());
 app.get('/', function (req, res) {
     res.send("hello world");
 });
+
 app.use('/api/user', userRoutes);
 app.use('/api/chat', chatRoutes);
 app.use("/api/message", messageRoutes);
@@ -40,11 +41,14 @@ const PORT = process.env.PORT || 8000;
 
 const server = app.listen(PORT, console.log(`server running on port ${PORT}`));
 
-const io = require('socket.io')(server, {
-    pingTimeout: 60000,
-    cors: {
-        origin: ["http://localhost:3000","https://colcom.onrender.com"]
-    }
+const io = require("socket.io")(server, {
+  pingTimeout: 60000,
+  cors: {
+    origin: [
+      "http://localhost:3000",
+      "https://enchanting-salamander-befe03.netlify.app/",
+    ],
+  },
 });
 
 io.on("connection", (socket) => {
