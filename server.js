@@ -20,10 +20,10 @@ app.get('/', function (req, res) {
     res.send("hello world");
 });
 
-app.use('/api/user', userRoutes);
-app.use('/api/chat', chatRoutes);
-app.use("/api/message", messageRoutes);
-app.use("/api/blogs", blogRoutes)
+app.use("https://colcom-api.onrender.com/api/user", userRoutes);
+app.use("https://colcom-api.onrender.com/api/chat", chatRoutes);
+app.use("https://colcom-api.onrender.com/api/message", messageRoutes);
+app.use("https://colcom-api.onrender.com/api/blogs", blogRoutes);
 
 
 app.use(notFound);
