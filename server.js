@@ -45,7 +45,7 @@ const io = require("socket.io")(server, {
   pingTimeout: 60000,
   cors: {
     origin: [
-      "http://localhost:3000",
+    //   "http://localhost:3000",
       "https://enchanting-salamander-befe03.netlify.app/",
     ],
   },
